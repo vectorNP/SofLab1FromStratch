@@ -14,3 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/register', function () {
+    return view('auth.register');
+});
+
+Route::post('/usersregister', 'UsersRegisterController@submit');
+
+Route::get('/login', function () {
+    return view('auth.login');
+});
+
+
+Route::post('/userslogin', 'UsersLoginController@submit');
+
+Route::view('/users_home','auth.users_home');
+
+

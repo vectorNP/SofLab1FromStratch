@@ -68,15 +68,15 @@
             
                 <div class="top-right links">
                     
-                        <a href="login">Login</a>
-                        <a href="register">Register</a>
+                        <a href="login">Logout</a>
+                        <a href="register">Edit</a>
                     
                 </div>
             
 
             <div class="content">
                 <div class="title m-b-md">
-                    SOFTLAB-IV Project 1
+                    Welcome {{Session::get('data')}}
                 </div>
 
                 <div class="links">
