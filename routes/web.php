@@ -15,19 +15,40 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/register', function () {
-    return view('auth.register');
+// Route::get('/register', function () {
+//     return view('auth.register');
+// });
+
+
+Route::group(['middleware' => 'checkusermiddleware'],function(){
+
+    Route::get('/users_home','UsersLoginController@show_home');
+
+    //Route::post('/userslogin', 'UsersLoginController@submit');
+
+    Route::get('/users_edit','UsersLoginController@show_edit');
+
+    Route::post('/users_edit_submit', 'UsersEditController@submit');
+
 });
 
 Route::post('/usersregister', 'UsersRegisterController@submit');
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
+Route::get('/login', 'UsersLoginController@login');
 
+Route::get('/register','UsersRegisterController@register');
+
+// Route::get('/users_home','UsersLoginController@show_home');
 
 Route::post('/userslogin', 'UsersLoginController@submit');
 
-Route::view('/users_home','auth.users_home');
+
+Route::get('/logout','UsersLoginController@logout');
+
+
+// Route::get('/users_edit','UsersLoginController@show_edit');
+
+// Route::post('/users_edit_submit', 'UsersEditController@submit');
+
 
 

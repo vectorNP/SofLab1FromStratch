@@ -69,11 +69,12 @@ a {
 </head>
 <body>
 
-<form action="usersregister" method="POST">
+<form action="users_edit_submit" method="POST">
   @csrf
   <div class="container">
     <h1>Register</h1>
         <p>Please fill in this form to create an account.</p>
+        <p>User's Email can't be changed .</p>
     <hr>
 
 
@@ -98,15 +99,7 @@ a {
         <br>
     </div>
 
-    <div>
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" >
-        @error('email')
-        <div>{{$message}}</div>
-        @enderror
-        <br>
-    </div>
-
+   
 
     <div>
         <label for="address"><b>Address</b></label>

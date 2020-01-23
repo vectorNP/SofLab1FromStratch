@@ -64,25 +64,35 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            
-                <div class="top-right links">
-                    
-                        <a href="login">Logout</a>
-                        <a href="register">Edit</a>
-                    
-                </div>
-            
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Welcome {{Session::get('data')}}
-                </div>
+        
 
-                <div class="links">
-                   
+
+        @if(is_null(Session::get('userAuth')))
+            <script>window.location = "/login";</script>
+        @else
+            {{-- {{Session::set('userAuth',Session::get('userAuth'))}}     --}}
+            <div class="flex-center position-ref full-height">
+
+                    <div class="top-right links">
+
+                            <a href="logout">Logout</a>
+                            <a href="users_edit">Edit</a>
+
+                    </div>
+                
+
+                <div class="content">
+                    <div class="title m-b-md">
+                        Welcome {{Session::get('userAuth')}}
+                    </div>
+
+                    <div class="links">
+                    
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
+
     </body>
 </html>
