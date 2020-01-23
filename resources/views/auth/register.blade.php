@@ -83,6 +83,39 @@ a {
 
 
 </script>
+
+<script type="text/javascript" src="http://www.google.com/jsapi">
+ 
+
+google.load("elements", "1", {packages: "transliteration"});
+ 
+function OnLoad() {
+  var currValue = document.getElementById("text1");
+ 
+var options = {
+  sourceLanguage:
+  google.elements.transliteration.LanguageCode.ENGLISH,
+  destinationLanguage:
+  [google.elements.transliteration.LanguageCode.HINDI],
+  shortcutKey: 'ctrl+g',
+  transliterationEnabled: true
+};
+ 
+ 
+var control = new
+ 
+  google.elements.transliteration.TransliterationControl(options);
+  control.makeTransliteratable(["text1"]);
+  var postValue = document.getElementById("text1");
+ 
+}
+ 
+google.setOnLoadCallback(OnLoad);
+ 
+</script> 
+
+
+
 </head>
 <body>
 
@@ -178,7 +211,7 @@ a {
 
     <div>
         <label for="name_devnagri">Devnagri Name</label>
-        <input type="text" name="name_devnagri"   autofocus>
+        <input type="text" name="name_devnagri" id="text1"  autofocus>
         {{-- <textarea id="t1" style="width: 600px; height: 200px;"></textarea>  --}}
         @error('name_devnagri')
         <div>{{$message}}</div>
