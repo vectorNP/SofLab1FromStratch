@@ -66,6 +66,23 @@ a {
   text-align: center;
 }
 </style>
+<script type="text/javascript" src="https://www.google.com/jsapi">
+
+      // Load the Google Onscreen Keyboard API
+      google.load("elements", "1", {
+          packages: "keyboard"
+      });
+
+      function onLoad() {
+        var kbd = new google.elements.keyboard.Keyboard(
+          [google.elements.keyboard.LayoutCode.RUSSIAN],
+          ['t1']);
+      }
+
+      google.setOnLoadCallback(onLoad);
+
+
+</script>
 </head>
 <body>
 
@@ -86,7 +103,18 @@ a {
         <br>
     </div>
 
-    <TODO:>Add date of birts</TODO:>
+    {{-- <TODO:>Add date of birts</TODO:> --}}
+    <div>
+      <label for="date_of_birth"><b>Date of Birth</b></label>
+          <input type="date"  name="date_of_birth" >
+
+          @error('date_of_birth')
+          <div>{{$message}}</div>
+          @enderror
+          <br>
+      </div>
+<br>
+
 
     <div>
     <label for="phone_number"><b>Phone Number</b></label>
@@ -151,6 +179,7 @@ a {
     <div>
         <label for="name_devnagri">Devnagri Name</label>
         <input type="text" name="name_devnagri"   autofocus>
+        {{-- <textarea id="t1" style="width: 600px; height: 200px;"></textarea>  --}}
         @error('name_devnagri')
         <div>{{$message}}</div>
         @enderror

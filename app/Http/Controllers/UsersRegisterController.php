@@ -37,7 +37,7 @@ class UsersRegisterController extends Controller
     DB::table('users')->insert(
         [
             'name' => $request->input('name'),
-            'date_of_birth' => '12-12-12',
+            'date_of_birth' => $request->input('date_of_birth'),
             'address' => $request->input('address'),
             'phone_number' => $request->input('phone_number'),
             'email' => $request->input('email'),
@@ -49,7 +49,8 @@ class UsersRegisterController extends Controller
     
 
 
-        print_r($request->input());
+        return redirect('login');
+        // print_r($request->input());
     }
 
 }

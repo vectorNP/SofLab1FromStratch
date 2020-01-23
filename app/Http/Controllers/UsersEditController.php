@@ -34,7 +34,7 @@ class UsersEditController extends Controller
     ->update(
         [
             'name' => $request->input('name'),
-            'date_of_birth' => '12-12-12',
+            'date_of_birth' => $request->input('date_of_birth'),
             'address' => $request->input('address'),
             'phone_number' => $request->input('phone_number'),
             'email' => 'hello@123.com',
@@ -44,6 +44,9 @@ class UsersEditController extends Controller
         ]
     );
     
+
+    //return redirect('login');
+
     print_r($request->input());
 
     }

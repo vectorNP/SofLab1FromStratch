@@ -87,7 +87,19 @@ a {
         <br>
     </div>
 
-    <TODO:>Add date of birts</TODO:>
+
+    {{-- <TODO:>Add date of birts</TODO:> --}}
+
+    <div>
+      <label for="date_of_birth"><b>Date of Birth</b></label>
+          <input type="date"  name="date_of_birth" >
+
+          @error('date_of_birth')
+          <div>{{$message}}</div>
+          @enderror
+          <br>
+    </div>
+    <br>
 
     <div>
     <label for="phone_number"><b>Phone Number</b></label>
@@ -152,12 +164,10 @@ a {
 
     <hr>
 
-    <button type="submit" class="registerbtn">Register</button>
+    <button type="submit" class="registerbtn">Edit</button>
   </div>
   
-  <div class="container signin">
-    <p>Already have an account? <a href="login">Sign in</a>.</p>
-  </div>
+ 
 </form>
 
 </body>

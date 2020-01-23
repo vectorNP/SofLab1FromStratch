@@ -30,7 +30,21 @@ button:hover {
 }
 
 
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+ }
 
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 
 .container {
   padding: 16px;
@@ -52,7 +66,8 @@ span.psw {
 </style>
 
 <script src='https://www.google.com/recaptcha/api.js'></script>
-<script>
+  
+  {{-- <script>
 
     function get_action(form) 
     {
@@ -69,10 +84,16 @@ span.psw {
         }
     }
     
-    </script>
+  </script> --}}
 
 </head>
 <body>
+
+  <div class="top-right links">
+
+    <a href="/">Home Page</a>
+
+  </div>
 
 <h2>Login Form</h2>
 
@@ -85,12 +106,15 @@ span.psw {
     <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
 
-    {{-- <div class="g-recaptcha" id="rcaptcha"  data-sitekey="6LdqudEUAAAAAD3jTFEw8MYssB4uZQyW3sn_pBg-"></div>
-    <span id="captcha" style="color:red" /></span> --}}
+    <div class="g-recaptcha" id="rcaptcha"  data-sitekey="6Lf489EUAAAAANzwk4BYCaMwbUM1nwZTX5HUxYBm"></div>
+    {{-- <span id="captcha" style="color:red" /></span> --}}
         
     <button type="submit">Login</button>
     
+    
+
   </div>
+
 
   
 </form>
