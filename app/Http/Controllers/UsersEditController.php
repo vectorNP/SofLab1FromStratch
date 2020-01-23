@@ -30,7 +30,7 @@ class UsersEditController extends Controller
     //session and then assign it to the row 
     //rest all is working properly.
 
-    DB::table('users')->where('name',$request->input('name'))
+    DB::table('users')->where('email',$request->session()->get('userAuth'))
     ->update(
         [
             'name' => $request->input('name'),
@@ -45,9 +45,9 @@ class UsersEditController extends Controller
     );
     
 
-    //return redirect('login');
+    return redirect('login');
 
-    print_r($request->input());
+    //print_r($request->input());
 
     }
 }

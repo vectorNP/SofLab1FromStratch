@@ -64,7 +64,7 @@ class UsersLoginController extends Controller
             //If the user has checked the Captcha box
 
             //$current_table= DB::table('users')->where('name','=',$request->input('uname'))->get();
-             $current_person = DB::table('users')->where('name',$request->input('uname'))->first();
+             $current_person = DB::table('users')->where('email',$request->input('uname'))->first();
 
              if(is_null($current_person)){
 
